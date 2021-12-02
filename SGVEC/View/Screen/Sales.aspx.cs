@@ -85,6 +85,8 @@ namespace SGVEC.View.Screen
 
                     if (gvProdutos.Rows.Count == 0) { lblError.Visible = true; lblError.Text = "Não há produtos registrados nessa venda no sistema!"; }
                     else lblError.Visible = false;
+
+                    cnt.closeConection();
                 }
                 else { lblError.Text = "É necessário selecionar um Produto!"; }
             }
@@ -164,6 +166,7 @@ namespace SGVEC.View.Screen
 
             doc.Add(table);
             doc.Close();
+            cnt.closeConection();
 
             System.Diagnostics.Process.Start(caminho); //Starta o pdf
         }

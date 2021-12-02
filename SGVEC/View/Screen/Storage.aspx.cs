@@ -86,6 +86,8 @@ namespace SGVEC.View.Screen
                     else { lblError.Text = "Não há produtos com essas informações no sistema!"; }
                 }
                 else { lblError.Text = "É necessário selecionar um produto!"; ClearComponents(); }
+
+                cnt.closeConection();
             }
             catch (Exception ex)
             {
@@ -241,6 +243,7 @@ namespace SGVEC.View.Screen
 
             doc.Add(table);
             doc.Close();
+            cnt.closeConection();
 
             System.Diagnostics.Process.Start(caminho); //Starta o pdf
         }

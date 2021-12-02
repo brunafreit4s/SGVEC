@@ -72,6 +72,8 @@ namespace SGVEC.View.Screen
                 }
 
                 txtTotalSales.Text = Convert.ToString(inVlTotal);
+
+                cnt.closeConection();
             }
             catch (Exception ex)
             {
@@ -136,6 +138,8 @@ namespace SGVEC.View.Screen
                     }
                 }
                 else { lblError.Visible = true; lblError.Text = "Atenção! É preciso digitar um Código de Barras ou Nome e a Quantidade de Produtos para adicionar na Venda!"; }
+
+                cnt.closeConection();
             }
             catch (Exception ex)
             {
@@ -207,6 +211,8 @@ namespace SGVEC.View.Screen
                         }
                     }
                 }
+
+                cnt.closeConection();
             }
             catch (Exception ex)
             {
@@ -284,6 +290,8 @@ namespace SGVEC.View.Screen
                     }
                 }
                 else { lblError.Visible = true; }
+
+                cnt.closeConection();
             }
             catch (Exception ex)
             {

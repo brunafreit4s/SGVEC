@@ -40,7 +40,7 @@ namespace SGVEC.View.Screen
                 ddlCargoEmployee.DataSource = dtManip.ExecDtTableStringQuery("SELECT * FROM CARGO");
                 ddlCargoEmployee.DataTextField = "NOME_CARGO";
                 ddlCargoEmployee.DataValueField = "COD_CARGO";
-                ddlCargoEmployee.DataBind();
+                ddlCargoEmployee.DataBind();                
             }
             catch (Exception ex)
             {
@@ -110,6 +110,8 @@ namespace SGVEC.View.Screen
                     else { lblError.Text = "Não há funcionários com essas informações no sistema!"; }
                 }
                 else { lblError.Text = "É necessário selecionar um funcionário!"; ClearComponents(); }
+
+                cnt.closeConection();
             }
             catch (Exception ex)
             {
@@ -203,6 +205,8 @@ namespace SGVEC.View.Screen
                     }
                     else { lblError.Visible = true; }
                 }
+
+                cnt.closeConection();
             }
             catch (Exception ex)
             {
@@ -436,6 +440,7 @@ namespace SGVEC.View.Screen
 
             doc.Add(table);
             doc.Close();
+            cnt.closeConection();
 
             System.Diagnostics.Process.Start(caminho); //Starta o pdf
         }

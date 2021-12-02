@@ -22,6 +22,8 @@ namespace SGVEC.View
             if (leitor.Read()) { gc.CodEmployeeLog = Convert.ToInt32(leitor[0].ToString()); gc.CodEmployee = Convert.ToInt32(leitor[16].ToString()); lblNomeFunc.Text = leitor[2].ToString(); }
 
             GetTotal();
+
+            cnt.closeConection();
         }
 
         protected string GetDataSales()
@@ -106,6 +108,7 @@ namespace SGVEC.View
 
             strDatas = strDatas + "]";
 
+            cnt.closeConection();
             return strDatas;
         }
 
@@ -137,6 +140,7 @@ namespace SGVEC.View
 
             strDatas = strDatas + "]";
 
+            cnt.closeConection();
             return strDatas;
         }
 
@@ -167,6 +171,7 @@ namespace SGVEC.View
             }
 
             strDatas = strDatas + "]";
+            cnt.closeConection();
 
             return strDatas;
         }
@@ -183,6 +188,7 @@ namespace SGVEC.View
             }
             else
             {
+                cnt.closeConection();
                 return false;
             }
 
@@ -196,9 +202,11 @@ namespace SGVEC.View
             }
             else
             {
+                cnt.closeConection();
                 return false;
             }
 
+            cnt.closeConection();
             return true;
         }
     }

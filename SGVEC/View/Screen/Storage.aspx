@@ -46,7 +46,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/View/Screen/Storage">
+                        <a href="/View/Screen/Product">
                             <img src="/images/Dashboard/codbarras.png" alt="Ícone de Produto pela icons8" />
                             Produtos
                         </a>
