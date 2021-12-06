@@ -136,6 +136,7 @@ namespace SGVEC.View.Screen
                         }
                         else { lblError.Visible = true; lblError.Text = "Atenção! A quantidade de produtos digitada não existe no estoque!"; }
                     }
+                    else { lblError.Visible = true; lblError.Text = "Atenção! Produto não encontrado, verifique os dados digitados!"; }
                 }
                 else { lblError.Visible = true; lblError.Text = "Atenção! É preciso digitar um Código de Barras ou Nome e a Quantidade de Produtos para adicionar na Venda!"; }
 
