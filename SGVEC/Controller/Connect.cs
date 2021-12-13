@@ -8,7 +8,6 @@ namespace SGVEC.Controller
     {
         private MySqlConnection cn = new MySqlConnection("Server=127.0.0.1;Database=SGVEC;UID=root;PWD=root123");
         private MySqlCommand cm = new MySqlCommand();
-        private ComponentError cptValidate = new ComponentError();
         private GeneralComponent gc = new GeneralComponent();
 
         public MySqlConnection DataBaseConnect()
@@ -20,8 +19,7 @@ namespace SGVEC.Controller
         {
             try
             {
-                cn.Close();
-                cn.Open();
+                cn.Open();                
                 return cn;
             }
             catch
@@ -52,18 +50,15 @@ namespace SGVEC.Controller
                     gc.CodEmployee = leitor.GetInt32(0);
                     gc.CPF = leitor.GetString(1);
                     gc.Name = leitor.GetString(2);
-                    cm.Connection.Close();
                     cn.Close();
                     return true;
                 }
 
-                cm.Connection.Close();
                 cn.Close();
                 return false;
             }
             catch
             {
-                cm.Connection.Close();
                 cn.Close();
                 return false;
             }

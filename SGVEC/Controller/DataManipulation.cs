@@ -27,18 +27,18 @@ namespace SGVEC.Controller
                 MySqlDataAdapter mySqlDtAdpt = new MySqlDataAdapter(CommandText, cn);
                 DataTable dtTable = new DataTable();
                 mySqlDtAdpt.Fill(dtTable);
-
+                cnt.closeConection();
                 return dtTable;
             }
             catch
             {
-                cm.Connection.Close();
+                cnt.closeConection();
                 return null;
             }
         }        
 
         public MySqlDataReader ExecuteDataReader(string CommandText)
-        {
+        {           
             cnt = new Connect();
             cn = new MySqlConnection();
 
@@ -59,19 +59,18 @@ namespace SGVEC.Controller
 
                 da.Fill(dt);
 
-                MySqlDataReader leitor = cm.ExecuteReader();
-
+                MySqlDataReader leitor = cm.ExecuteReader();                
                 return leitor;
             }
             catch
             {
-                cm.Connection.Close();
                 return null;
             }
         }
 
         public bool ExecuteStringQuery(string CommandText)
         {
+            cnt.closeConection();
             cnt = new Connect();
             cn = new MySqlConnection();
 
@@ -87,13 +86,11 @@ namespace SGVEC.Controller
                 cm.CommandType = CommandType.Text;
                 cm.CommandText = CommandText;
                 cm.ExecuteNonQuery();
-
-                cm.Connection.Close();
+                cnt.closeConection();
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
-                cm.Connection.Close();
                 return false;
             }
         }

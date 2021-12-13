@@ -41,6 +41,7 @@ namespace SGVEC.View.Screen
 
                 cnt = new Connect();
                 cnt.DataBaseConnect();
+
                 MySqlDataReader leitor = dtManip.ExecuteDataReader("SELECT COUNT(COD_VENDA) FROM VENDA");
 
                 if (leitor.Read())
@@ -59,8 +60,6 @@ namespace SGVEC.View.Screen
                 else lblError.Visible = false;
 
                 //Atualiza o valor total da venda
-                cnt = new Connect();
-                cnt.DataBaseConnect();
                 MySqlDataReader leitor2 = dtManip.ExecuteDataReader("SELECT * FROM PRODUTO_VENDA WHERE FK_COD_VENDA = '" + intCodVenda + "'");
 
                 txtTotalSales.Text = "0";
@@ -101,6 +100,8 @@ namespace SGVEC.View.Screen
                     {
                         if (Convert.ToInt32(leitor[6].ToString()) > Convert.ToInt32(txtQuantProduct.Text))
                         {
+                            int intQntProduct = Convert.ToInt32(leitor[6].ToString());
+
                             var objRetorno = dtManip.ExecuteStringQuery("CALL PROC_INSERT_PRODUTO_VENDA('" + txtQuantProduct.Text + "', '"
                                                                         + leitor[3].ToString().Replace(',', '.') + "', '" + leitor[0].ToString() + "', '" + intCodVenda + "')");
 
@@ -113,7 +114,7 @@ namespace SGVEC.View.Screen
                                                                             WHERE FK_COD_VENDA = '" + intCodVenda + "'");
                                 gvProducts.DataBind();
 
-                                //Atualiza o valor total da venda
+                                //Atualiza o valor total da venda                                
                                 cnt = new Connect();
                                 cnt.DataBaseConnect();
                                 MySqlDataReader leitor2 = dtManip.ExecuteDataReader("SELECT * FROM PRODUTO_VENDA WHERE FK_COD_VENDA = '" + intCodVenda + "'");
@@ -128,8 +129,7 @@ namespace SGVEC.View.Screen
 
                                 txtTotalSales.Text = Convert.ToString(inVlTotal);
 
-                                //atualiza a quantidade de produtos na base de dados  
-                                int intQntProduct = Convert.ToInt32(leitor[6].ToString());
+                                //atualiza a quantidade de produtos na base de dados                                
                                 int intVlNewProduct = (intQntProduct - Convert.ToInt32(txtQuantProduct.Text));
                                 dtManip.ExecuteStringQuery("UPDATE PRODUTO SET QUANTIDADE_PROD = '" + intVlNewProduct + "' WHERE COD_BARRAS = '" + txtCodProduct.Text + "'");
                             }
