@@ -24,11 +24,12 @@ na parte do back-end e por <a href="https://github.com/nicolycunha">Nicoly</a> n
   ![image](https://github.com/brunafreit4s/DemoWebCam/assets/32462617/0898393a-b731-453b-a740-743cade9fa88)
   
   ![image](https://github.com/brunafreit4s/SGVE/assets/32462617/8b9d997d-9afa-40b9-ae57-be2e815597a4)
+  ![image](https://github.com/brunafreit4s/SGVEC/assets/32462617/d9535f5c-4d47-421c-943e-23653fbcec23)
   ![image](https://github.com/brunafreit4s/SGVE/assets/32462617/de34452c-3fcc-4354-a02f-07704680e234)
   ![image](https://github.com/brunafreit4s/SGVEC/assets/32462617/d36f52b1-31ff-4f36-a386-ed2133af3bf8)
   ![image](https://github.com/brunafreit4s/DemoWebCam/assets/32462617/b805300e-8f95-41b9-beab-884297ba18ff)
   ![image](https://github.com/brunafreit4s/DemoWebCam/assets/32462617/616d31b4-3ac9-4a3f-a4dc-6f0b230f52ec)
-
+  
 
 ## Desenvolvedores ✨
 <table>
